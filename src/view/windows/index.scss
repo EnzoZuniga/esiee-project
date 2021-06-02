@@ -1,0 +1,7 @@
+@import "./../../utils/scss/mixins";
+@import "./../../utils/scss/colors";
+@import "./../../utils/scss/global.scss";
+
+.windows {
+    @include container;
+}

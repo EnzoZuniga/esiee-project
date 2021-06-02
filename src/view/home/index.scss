@@ -1,0 +1,32 @@
+@import "./../../utils/scss/mixins";
+@import "./../../utils/scss/colors";
+@import "./../../utils/scss/global.scss";
+
+.home {
+    @include container;
+}
+
+.inputWrapper {
+    position: absolute;
+    bottom: 50%;
+    .inputTitleWrapper{
+        text-align: center;
+        @include font-size(30);
+        text-transform: uppercase;
+        color: $purple;
+        font-weight: bold;
+        @include calc-vw(margin-bottom, 40);
+    }
+    input[type = "search"] {
+        @include calc-vw(padding, 20);
+        @include calc-vw(width, 800);
+        border-color: $light-purple;
+        background-color: unset;
+        box-shadow: none;
+        border-radius: 50px; 
+        transform-box:unset;
+        color: unset;
+        outline: unset;
+        @include font-size(16);
+    }
+}

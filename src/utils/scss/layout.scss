@@ -1,0 +1,87 @@
+@import "./mixins";
+@import "./_colors";
+
+.header {
+  position: fixed;
+  background: linear-gradient(to right, $white, $purple);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  width: 100%;
+  a,
+  .dropdown {
+    color: $white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: none;
+    @include font-size(13);
+    @include calc-vw(margin-left, 40);
+    &:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+    &:first-child {
+      margin: unset;
+    }
+  }
+
+  .dropdown:hover {
+    opacity: 1;
+    span {
+      opacity: 0.5;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    left: 10%;
+    a {
+      img {
+        @include calc-vw(height, 56);
+        @include calc-vw(width, 181);
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10%;
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: $purple;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 0px 15px;
+      z-index: 1;
+      a {
+        color: $white;
+      }
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    ul {
+      text-align: left;
+      li {
+        @include calc-vw(margin-left, -30);
+        @include font-size(11);
+      }
+    }
+  }
+}

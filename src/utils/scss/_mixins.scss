@@ -1,0 +1,53 @@
+// Responsive fonts
+@mixin font-size($size, $width: 1440, $responsive: false) {
+  $size: if($responsive, $size * $responsive, $size);
+
+  font-size: #{$size / 10}rem;
+  font-size: vw($size, $width, $responsive);
+}
+
+@mixin line-height($size, $width: 1440, $responsive: false) {
+  $size: if($responsive, $size * $responsive, $size);
+
+  line-height: #{$size / 10}rem;
+  line-height: vw($size, $width, $responsive);
+}
+
+// Responsive prop
+@mixin calc-vw($prop, $size, $width: 1440, $responsive: false) {
+  $size: if($responsive, $size * $responsive, $size);
+
+  #{$prop}: #{$size}px;
+  #{$prop}: vw($size, $width, $responsive);
+}
+
+// Calc vw func
+@function vw($size, $width: 1440, $responsive: false) {
+  $size: if($responsive, $size * $responsive, $size);
+  $vw: round-dec(($size / $width) * 100, 2);
+
+  @return #{$vw}vw;
+}
+
+@function round-dec($number, $digits: 0) {
+  $n: 1;
+
+  @if type-of($number) != number {
+    @return $number;
+  }
+
+  @if $digits > 0 {
+    @for $i from 1 through $digits {
+      $n: $n * 10;
+    }
+  }
+
+  @return round($number * $n) / $n;
+}
+
+//Media query
+@mixin mobile {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
