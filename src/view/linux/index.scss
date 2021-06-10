@@ -3,5 +3,19 @@
 @import "./../../utils/scss/global.scss";
 
 .linux {
-    @include container;
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .cardItemWrapper{
+    @include calc-vw(margin-top, 100);
+    @include calc-vw(width, 300);
+    @include calc-vw(height, 300);
+    @include calc-vw(margin-right, 20);
+    background-color: $white;
+    border-radius: 10px;
+    :last-child{
+      margin: unset;
+    }
+  }
 }

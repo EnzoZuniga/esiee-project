@@ -1,9 +1,9 @@
-@import "./mixins";
-@import "./_colors";
+@import "./../mixins";
+@import "./../_colors";
 
 .header {
   position: fixed;
-  background: linear-gradient(to right, $white, $purple);
+  background: $white;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -12,7 +12,7 @@
   width: 100%;
   a,
   .dropdown {
-    color: $white;
+    color: $black;
     font-weight: bold;
     text-decoration: none;
     text-transform: none;

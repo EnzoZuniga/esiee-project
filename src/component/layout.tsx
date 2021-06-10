@@ -7,7 +7,7 @@ import Developpement from "../view/developpement";
 import Projet from "../view/projet";
 import Linux from "../view/linux";
 import logo from "./../utils/assets/logo.png";
-import "./../utils/scss/layout.scss";
+import "./../utils/scss/component/layout.scss";
 
 const Layout: React.FC = () => {
 
@@ -23,13 +23,13 @@ const Layout: React.FC = () => {
             </div>
             <div className="navigation">
               <div className="dropdown">
-                <span >OS</span>
+                <span >VM</span>
                 <div className="dropdown-content">
                   <p>
-                    <Link to="/os/linux">Linux</Link>
+                    <Link to="/vm/linux">Linux</Link>
                   </p>
                   <p>
-                    <Link to="/os/windows">Windows</Link>
+                    <Link to="/vm/windows">Windows</Link>
                   </p>
                 </div>
               </div>
@@ -54,10 +54,10 @@ const Layout: React.FC = () => {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/os/linux">
+            <Route exact path="/vm/linux">
               <Linux />
             </Route>
-            <Route exact path="/os/windows">
+            <Route exact path="/vm/windows">
               <Windows />
             </Route>
             <Route exact path="/outils/developpement">

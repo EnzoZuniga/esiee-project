@@ -1,6 +1,5 @@
 @mixin container {
   padding-top: 100px;
-  background-color: $white;
   @include calc-vw(padding-right, 300);
   @include calc-vw(padding-left, 300);
   @include font-size(15);
